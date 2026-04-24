@@ -1,11 +1,18 @@
-var accordian = document.querySelectorAll(".accordian");
-accordian.forEach(accordian =>{
-    const icon = accordian.querySelector(".icon");
-    const answer = accordian.querySelector(".answer")
+var accordians = document.querySelectorAll(".accordian");
 
-accordian.addEventListener("click",()=>{
-    icon.classList.toggle("active")
-    answer.classList.toggle("active")
-}) 
+accordians.forEach(item => {
+    const icon = item.querySelector(".icon");
+    const answer = item.querySelector(".answer");
 
-})
+    item.addEventListener("click", () => {
+        accordians.forEach(other => {
+            if (other !== item) {
+                other.querySelector(".answer").classList.remove("active");
+                other.querySelector(".icon").classList.remove("active");
+            }
+        });
+
+        icon.classList.toggle("active");
+        answer.classList.toggle("active");
+    }); 
+});

@@ -1,39 +1,107 @@
 body {
     /* background-color: rgb(61, 195, 228); */
-    padding: 40px;
+    /* padding: 40px; */
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6rem;
+    background: #ffffff;
+}
+
+/* nav {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.img {
+    width: 250px;
+    height: 180px;
+
+}
+
+button {
+    margin-right: 20px;
+    background: red;
+    border-radius: 4px;
+    border: transparent;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+} */
+
+.heading {
+    margin: 60px 0 25px 40px;
+    font-size: 1.8rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(0, 0, 0);
 }
 
 .accordian {
-    background: rgb(67, 68, 69);
+
+    background: rgb(57, 58, 58);
     color: #fff;
     padding: 4px 16px;
-    margin-bottom: 16px;
+    margin: 16px 40px;
     border-radius: 4px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
 
+.accordian:hover {
+    background-color: rgb(77, 78, 81);
+}
+
 .question {
     display: flex;
     flex-direction: row;
-/* flex-wrap: wrap; */
+    /* flex-wrap: wrap; */
     justify-content: space-between;
     align-items: center;
 }
-.icon{
-    margin-right:16px; 
+
+.icon {
+    margin-right: 16px;
     font-size: 25px;
+    transition: transform 0.2s;
 }
-.answer{
-    color: rgb(239, 218, 178);
+
+.answer {
+    color: rgb(255, 255, 255);
     max-height: 0;
     overflow: hidden;
+    transition: max-heigth 0.3s ease
 }
-.answer.active{
-    max-height :fit-content;
+
+.answer.active {
+    max-height: 300px;
+    padding-top: 10px;
 }
-.icon.active{
+
+.icon.active {
     transform: rotate(45deg);
+}
+
+@media (max-width: 480px) {
+    .img {
+        width: 150px;
+        height: 150px;
+    }
+
+    button {
+        margin-right: 15px;
+        background: red;
+        border-radius: 4px;
+        border: transparent;
+        color: white;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .accordian {
+        margin: 10px 20px;
+        transition: all 0.3s ease;
+    }
 }
